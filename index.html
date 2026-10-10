@@ -448,6 +448,265 @@
       line-height: 2.1;
       white-space: pre;
     }
+
+    :root {
+      --paper: #f7f6f0;
+      --white: #fffefa;
+      --ink: #15283d;
+      --muted: #46566a;
+      --line: #d8dcd7;
+      --lime: #d5ef62;
+      --blue: #2157a6;
+      --coral: #e65d43;
+      --teal: #147d78;
+    }
+    body { color: var(--ink); background: var(--paper); }
+    .wordmark-mark { background: var(--ink); color: var(--lime); }
+    .nav a { color: #46566a; }
+    .hero {
+      background-color: #fbfaf5;
+      background-image: linear-gradient(rgb(21 40 61 / 5%) 1px, transparent 1px), linear-gradient(90deg, rgb(21 40 61 / 5%) 1px, transparent 1px);
+      background-size: 44px 44px;
+      animation: blueprint-drift 32s linear infinite;
+    }
+    .hero::before { background: var(--coral); }
+    .hero::after { border-color: var(--teal); color: #415369; }
+    .hero .eyebrow, .hero-copy, .hero-foot span { color: #46566a; }
+    .status-dot { background: var(--coral); }
+    h1 span { color: var(--coral); }
+    .button { background: var(--blue); color: #fff; }
+    .button:hover { background: var(--ink); }
+    .button.button-outline { border-color: #aab5c1; background: transparent; color: var(--ink); }
+    .button-outline:hover { border-color: var(--ink); background: #e9edf1; color: var(--ink); }
+    .hero-foot { border-color: #c9d0d3; }
+    .signal { border-color: var(--line); }
+    .signal strong { color: var(--blue); }
+    .section-kicker, .work-number, .skill-row h3 { color: var(--blue); }
+    .section-kicker::before { background: var(--coral); }
+    .tag { border-color: #cbd2d7; color: #33465b; }
+    .work-item.featured { background: #15283d; }
+    .work-item.featured .work-number, .work-item.featured .work-metric strong { color: var(--lime); }
+    .work-item.featured .tag { border-color: #708092; color: #f1f3ee; }
+    .experience {
+      background-color: #e8eeeb;
+      background-image: linear-gradient(rgb(21 40 61 / 3%) 1px, transparent 1px), linear-gradient(90deg, rgb(21 40 61 / 3%) 1px, transparent 1px);
+      background-size: 48px 48px;
+      animation: blueprint-drift 38s linear infinite reverse;
+    }
+    .timeline, .role { border-color: #c2cfca; }
+    .role-company { color: #145f5b; }
+    .contact { background: #15283d; color: #fffefa; }
+    .contact::after {
+      border-left-color: rgb(255 255 255 / 18%);
+      background-image: linear-gradient(rgb(255 255 255 / 9%) 1px, transparent 1px), linear-gradient(90deg, rgb(255 255 255 / 9%) 1px, transparent 1px);
+      animation: blueprint-drift 34s linear infinite;
+    }
+    .contact .section-kicker { color: var(--lime); }
+    .contact .section-kicker::before { background: var(--coral); }
+    .contact-copy { color: #e1e7ec; }
+    .contact-links a { border-color: #718092; color: #fffefa; }
+    .contact-links a span:last-child { color: var(--lime); }
+    footer { color: #536174; }
+
+    .hero-content > * { animation: rise-in 650ms cubic-bezier(.2,.7,.2,1) both; }
+    .hero-content > :nth-child(1) { animation-delay: 70ms; }
+    .hero-content > :nth-child(2) { animation-delay: 150ms; }
+    .hero-content > :nth-child(3) { animation-delay: 240ms; }
+    .hero-content > :nth-child(4) { animation-delay: 330ms; }
+    .hero-content > :nth-child(5) { animation-delay: 420ms; }
+    .status-dot { animation: signal-pulse 2.4s ease-in-out 700ms infinite; }
+    .hero::after { animation: index-arrive 700ms 450ms both; }
+    .reveal { filter: blur(3px); transition: opacity 600ms ease, transform 600ms cubic-bezier(.2,.7,.2,1), filter 600ms ease; }
+    .reveal.is-visible { filter: blur(0); }
+    .work-item:nth-child(2) { transition-delay: 70ms; }
+    .work-item:nth-child(3) { transition-delay: 140ms; }
+    .work-item:nth-child(4) { transition-delay: 210ms; }
+    .work-item:nth-child(5) { transition-delay: 280ms; }
+    .role:nth-child(2) { transition-delay: 70ms; }
+    .role:nth-child(3) { transition-delay: 140ms; }
+    .role:nth-child(4) { transition-delay: 210ms; }
+    .role:nth-child(5) { transition-delay: 280ms; }
+    .work-item:not(.featured) { transition: transform 220ms ease, box-shadow 220ms ease, opacity 600ms ease, filter 600ms ease; }
+    .work-item:not(.featured):hover { z-index: 1; transform: translateY(-4px); box-shadow: 0 12px 28px rgb(21 40 61 / 11%); }
+    .project-visual img { transition: transform 700ms cubic-bezier(.2,.7,.2,1), filter 500ms ease; }
+    .work-item.featured:hover .project-visual img { transform: scale(1.045); filter: saturate(.95); }
+    .button .arrow { transition: transform 180ms ease; }
+    .button:hover .arrow { transform: translate(3px, -2px); }
+
+    @keyframes rise-in {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes signal-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgb(230 93 67 / 20%); }
+      50% { box-shadow: 0 0 0 7px rgb(230 93 67 / 0%); }
+    }
+    @keyframes index-arrive {
+      from { opacity: 0; transform: translateX(10px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes blueprint-drift {
+      from { background-position: 0 0, 0 0; }
+      to { background-position: 96px 48px, 48px 96px; }
+    }
+    @media (max-width: 1100px) {
+      .hero::after { animation: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-content > *, .hero::after, .status-dot { animation: none !important; }
+      .hero, .experience, .contact::after { animation: none !important; }
+      .reveal { filter: none; transition: none; }
+      .work-item:not(.featured), .project-visual img, .button .arrow { transition: none; }
+    }
+
+    :root {
+      --paper: #f4f2e9;
+      --white: #fffdf7;
+      --ink: #142b22;
+      --muted: #52645a;
+      --line: #d8d9ce;
+      --lime: #e4f27c;
+      --blue: #216858;
+      --coral: #df5d43;
+      --teal: #69aa91;
+    }
+    body { background: var(--paper); }
+    .topbar {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: min(1160px, calc(100% - 96px));
+      transform: translateX(-50%);
+      border-color: rgb(255 253 247 / 30%);
+    }
+    .wordmark, .nav a, .nav .nav-contact { color: var(--white); }
+    .wordmark-mark { border-radius: 2px; background: var(--lime); color: var(--ink); }
+    .nav a:hover, .nav a:focus-visible { color: var(--lime); }
+    .hero {
+      min-height: 755px;
+      border: 0;
+      background-color: #18382d;
+      background-image:
+        linear-gradient(90deg, rgb(13 33 26 / 92%) 0%, rgb(13 33 26 / 81%) 47%, rgb(13 33 26 / 31%) 100%),
+        linear-gradient(0deg, rgb(13 33 26 / 67%) 0%, transparent 44%),
+        url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2200&q=88");
+      background-size: 100% 100%, 100% 100%, cover;
+      background-position: center, center, center 52%;
+      animation: hero-photo-drift 26s ease-in-out infinite alternate;
+      color: var(--white);
+    }
+    .hero::before {
+      z-index: 0;
+      right: auto;
+      left: max(0px, calc((100vw - 1160px) / 2 - 25px));
+      width: 3px;
+      background: var(--coral);
+    }
+    .hero::after {
+      z-index: 0;
+      top: 43%;
+      right: max(48px, calc((100vw - 1160px) / 2));
+      bottom: auto;
+      left: auto;
+      width: 190px;
+      height: auto;
+      padding-left: 14px;
+      border: 0;
+      border-left: 2px solid var(--lime);
+      border-radius: 0;
+      box-shadow: none;
+      background: none;
+      color: rgb(255 253 247 / 78%);
+      content: "STACK INDEX  /  01\A ANGULAR 20\A JAVASCRIPT\A SYSTEM DESIGN";
+      font-size: 10px;
+      line-height: 2.2;
+      white-space: pre;
+      pointer-events: none;
+    }
+    .hero-content { z-index: 1; padding-block: 145px 64px; }
+    .hero .eyebrow, .hero-copy, .hero-foot span { color: rgb(255 253 247 / 82%); }
+    .status-dot { background: var(--lime); box-shadow: 0 0 0 5px rgb(228 242 124 / 15%); }
+    h1 { max-width: 860px; margin-top: 34px; color: var(--white); font-size: 118px; }
+    h1 span { color: var(--lime); }
+    .hero-copy { max-width: 590px; font-size: 17px; }
+    .button { border-radius: 3px; background: var(--lime); color: var(--ink); }
+    .button:hover { background: var(--white); color: var(--ink); }
+    .button.button-outline { border-color: rgb(255 253 247 / 55%); background: rgb(17 36 28 / 22%); color: var(--white); }
+    .button.button-outline:hover { border-color: var(--white); background: rgb(255 253 247 / 14%); color: var(--white); }
+    .hero-foot { border-color: rgb(255 253 247 / 30%); }
+    .hero-foot strong { color: var(--white); }
+    .signal-row { background: var(--white); }
+    .signal strong { color: var(--blue); }
+    .section { padding-block: 108px; }
+    .section-kicker, .work-number, .skill-row h3 { color: var(--blue); }
+    .section-kicker::before { background: var(--coral); }
+    .work-list { gap: 2px; border-color: #cfd3c8; background: #cfd3c8; }
+    .work-item { background: var(--white); }
+    .work-item:not(.featured) { min-height: 380px; }
+    .work-item:not(.featured) .project-thumb { width: 100%; }
+    .project-thumb {
+      position: relative;
+      width: 100%;
+      height: 124px;
+      overflow: hidden;
+      background: #29443a;
+    }
+    .project-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; filter: saturate(.78); transition: transform 700ms cubic-bezier(.2,.7,.2,1), filter 400ms ease; }
+    .project-thumb::after { position: absolute; inset: 0; background: linear-gradient(0deg, rgb(16 34 27 / 68%), transparent 75%); content: ""; }
+    .project-thumb span { position: absolute; z-index: 1; right: 13px; bottom: 11px; left: 13px; color: var(--white); font-family: var(--mono); font-size: 9px; text-transform: uppercase; }
+    .work-item:hover .project-thumb img { transform: scale(1.055); filter: saturate(1); }
+    .work-item.featured { background: #17382d; }
+    .work-item.featured .work-number, .work-item.featured .work-metric strong { color: var(--lime); }
+    .work-item.featured .tag { border-color: rgb(255 253 247 / 36%); color: var(--white); }
+    .project-visual { background: #253f35; }
+    .experience {
+      background-color: #e7ece5;
+      background-image: linear-gradient(rgb(20 43 34 / 3%) 1px, transparent 1px), linear-gradient(90deg, rgb(20 43 34 / 3%) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .timeline, .role { border-color: #c2cec4; }
+    .role-company { color: #216858; }
+    .contact { background: #17382d; }
+    .contact::after { border-left-color: rgb(255 253 247 / 20%); }
+    .contact .section-kicker { color: var(--lime); }
+    .contact .section-kicker::before { background: var(--coral); }
+    .contact-links a { border-color: rgb(255 253 247 / 34%); }
+    footer { color: #53645a; }
+    @keyframes hero-photo-drift {
+      from { background-position: center, center, center 48%; }
+      to { background-position: center, center, center 58%; }
+    }
+    @media (max-width: 1100px) {
+      .hero::after { display: none; }
+    }
+    @media (max-width: 900px) {
+      .topbar { width: min(100% - 56px, 700px); }
+      .hero { min-height: 700px; background-position: center, center, 58% center; }
+      h1 { font-size: 88px; }
+      .work-item:not(.featured) { min-height: 400px; }
+    }
+    @media (max-width: 620px) {
+      .topbar { width: calc(100% - 40px); min-height: 68px; }
+      .nav { background: #17382d; border-color: rgb(255 253 247 / 28%); }
+      .nav a { color: var(--white); }
+      .menu-toggle { border-color: rgb(255 253 247 / 55%); color: var(--white); }
+      .hero { min-height: 750px; background-position: center, center, 60% center; }
+      .hero::before { left: 0; }
+      .hero-content { padding-block: 125px 40px; }
+      h1 { margin-top: 28px; font-size: 66px; }
+      .hero-copy { font-size: 15px; }
+      .hero-foot { gap: 12px; margin-top: 37px; }
+      .hero-foot div { grid-template-columns: 108px 1fr; }
+      .work-item:not(.featured) { min-height: 0; }
+      .project-thumb { height: 150px; }
+      .work-item.featured { background: #17382d; }
+      .project-visual { min-height: 210px; }
+      .project-visual img { min-height: 210px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero { animation: none; }
+      .project-thumb img { transition: none; }
+    }
   </style>
 </head>
 <body>
@@ -511,24 +770,28 @@
           <span class="work-number">02</span>
           <div><h3>Device monitoring &amp; updates</h3><span class="work-client">Hewlett-Packard · Wipro</span></div>
           <p>Developed real-time device monitoring dashboards and secure software update flows, contributing to UI/UX design and agile delivery.</p>
+          <div class="project-thumb" aria-hidden="true"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt=""><span>Connected systems</span></div>
           <div class="work-tags"><span class="tag">Dashboards</span><span class="tag">Security</span></div>
         </article>
         <article class="work-item reveal">
           <span class="work-number">03</span>
           <div><h3>Digital asset management</h3><span class="work-client">AssetSERV · Cognizant</span></div>
           <p>Designed Angular components with Material Design for a digital asset management platform; contributed to project estimates and technical discussions.</p>
+          <div class="project-thumb" aria-hidden="true"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt=""><span>Digital products</span></div>
           <div class="work-tags"><span class="tag">Angular</span><span class="tag">Material Design</span></div>
         </article>
         <article class="work-item reveal">
           <span class="work-number">04</span>
           <div><h3>Employee onboarding &amp; seating</h3><span class="work-client">Bank of America · Wipro</span></div>
           <p>Built an application for employee onboarding and seat allocation, translating business requirements into practical internal workflows.</p>
+          <div class="project-thumb" aria-hidden="true"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt=""><span>People &amp; workplace</span></div>
           <div class="work-tags"><span class="tag">Enterprise UX</span><span class="tag">Angular</span></div>
         </article>
         <article class="work-item reveal">
           <span class="work-number">05</span>
           <div><h3>SaaS learning &amp; creator tools</h3><span class="work-client">Coign Consultants · SellerGyan</span></div>
           <p>Built mentor and student modules, internal business tools, REST APIs, and social integrations using Angular, Node.js, and .NET services.</p>
+          <div class="project-thumb" aria-hidden="true"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt=""><span>Learning platforms</span></div>
           <div class="work-tags"><span class="tag">Angular</span><span class="tag">Node.js</span><span class="tag">REST</span></div>
         </article>
       </div>
